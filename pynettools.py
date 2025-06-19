@@ -1,10 +1,15 @@
+import os
+import sys
+import shutil
+from pathlib import Path
+
 def self_install():
     target_local = Path("/bin/pynettools")
     current_path = Path(__file__).resolve()
 
-    # Already installed?
-    if current_path == target_local or str(current_path).startswith("/bin"):
-        return  # Already installed, skip
+    # If we're already running from the target, don't reinstall
+    if current_path == target_local or shutil.which("pynettools") == str(target_local):
+        return  # Already installed
 
     print("📦 PyNetTools not found in /bin — installing...")
 
@@ -31,7 +36,6 @@ def self_install():
     print("🧠 Tip: If 'pynettools' isn't found, ensure /bin is in your PATH.\n")
 
     sys.exit(0)
-
 
 self_install()  # Call before the rest of your app loads
 
