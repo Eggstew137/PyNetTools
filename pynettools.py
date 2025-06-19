@@ -1,3 +1,44 @@
+import os
+import sys
+import shutil
+from pathlib import Path
+
+def self_install():
+    target_local = Path.home() / ".local/bin/pinet-toolbox"
+    current_path = Path(__file__).resolve()
+
+    # Already installed?
+    if current_path == target_local or str(current_path).startswith("/usr/local/bin"):
+        return  # Already installed, skip
+
+    print("📦 PiNet Toolbox not found in ~/.local/bin — installing...")
+
+    # Ensure target directory exists
+    os.makedirs(target_local.parent, exist_ok=True)
+
+    # Read current script
+    with open(current_path, "r") as src:
+        content = src.read()
+
+    # Ensure it has shebang
+    if not content.startswith("#!"):
+        content = "#!/usr/bin/env python3\n" + content
+
+    # Write to target
+    with open(target_local, "w") as dst:
+        dst.write(content)
+
+    os.chmod(target_local, 0o755)
+
+    print(f"✅ Installed to: {target_local}")
+    print("🔁 Please re-run using:\n")
+    print(f"    {'sudo ' if os.geteuid() != 0 else ''}pinet-toolbox\n")
+    print("🧠 Tip: If 'pinet-toolbox' isn't found, add ~/.local/bin to your PATH.\n")
+
+    sys.exit(0)
+
+self_install()  # Call before the rest of your app loads
+
 import tkinter as tk
 from tkinter import ttk, scrolledtext, messagebox
 import subprocess
