@@ -14,6 +14,7 @@ Perfect for tech enthusiasts, sysadmins, and tinkerers with a 3.5" touchscreen a
 ✔️ SSH and Telnet remote command support  
 ✔️ Easy-to-read output and `/boot/network_report.txt` logging  
 ✔️ Works on Raspberry Pi **and** standard Linux desktops/laptops
+
 PLEASE NOTE: You NEED apt python and tkinter to run this!
 
 ---
