@@ -26,7 +26,19 @@ PLEASE NOTE: You NEED apt python and tkinter to run this!
 
 ## 🚀 Getting Started
 
-### 1. Clone the repo
+### 1. Clone the repo (Most OSes)
 ```bash
-git clone https://github.com/Eggstew/pinet-toolbox.git
-cd pinet-toolbox
+git clone https://github.com/Eggstew137/PyNetTools
+cd PyNetTools
+mv PyNetTools/pynettools.py /bin/pynettools.py (May need sudo if bin is protected)
+```
+### 2. Running PyNetTools!
+```bash
+sudo python3 pynettools.py
+```
+Select what components you want to update/install (if you install a component the first time you run it, it will update if you select it subsequent times)
+And you're done!  Have fun using PyNetTools!
+
+
+
+
