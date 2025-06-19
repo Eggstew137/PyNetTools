@@ -217,8 +217,8 @@ def switch_to_toolbox():
 
 # --- Root Window ---
 root = tk.Tk()
-root.title("PiNet Toolbox Installer + App")
-root.geometry("480x320")
+root.title("PyNetTools Installer/Updater + App")
+root.geometry("680x420")
 
 # --- Installer Frame ---
 installer_frame = tk.Frame(root)
