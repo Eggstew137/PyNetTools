@@ -30,9 +30,8 @@ PLEASE NOTE: You NEED apt python and tkinter to run this!
 ```bash
 git clone https://github.com/Eggstew137/PyNetTools
 cd PyNetTools
-mv PyNetTools/pynettools.py /bin/pynettools.py
+mv PyNetTools/pynettools.py /home/youruser/pynettools.py
 ```
-(You may need sudo if /bin is protected)
 ### 2. Running PyNetTools!
 ```bash
 sudo python3 pynettools.py
