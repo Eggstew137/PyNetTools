@@ -1,4 +1,4 @@
-# PiNet Toolbox 🛠️
+# PyNetTools 🛠️
 
 A compact touchscreen-friendly network diagnostics and utilities suite built for Raspberry Pi and other Debian/Ubuntu systems.  
 Perfect for tech enthusiasts, sysadmins, and tinkerers with a 3.5" touchscreen and a Raspberry Pi 3/4/5 — but also fully compatible with x86/x64 Linux systems!
