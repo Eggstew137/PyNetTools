@@ -4,12 +4,12 @@ import shutil
 from pathlib import Path
 
 def self_install():
-    target_local = Path("/bin/pynettools")
+    target_local = Path("/bin/pynettools").resolve()
     current_path = Path(__file__).resolve()
 
-    # If we're already running from the target, don't reinstall
-    if current_path == target_local or shutil.which("pynettools") == str(target_local):
-        return  # Already installed
+    # Don't reinstall if already running from /bin/pynettools
+    if current_path.samefile(target_local):
+        return
 
     print("📦 PyNetTools not found in /bin — installing...")
 
@@ -24,7 +24,7 @@ def self_install():
     if not content.startswith("#!"):
         content = "#!/usr/bin/env python3\n" + content
 
-    # Write to target
+    # Write to /bin/pynettools
     with open(target_local, "w") as dst:
         dst.write(content)
 
@@ -36,8 +36,6 @@ def self_install():
     print("🧠 Tip: If 'pynettools' isn't found, ensure /bin is in your PATH.\n")
 
     sys.exit(0)
-
-self_install()  # Call before the rest of your app loads
 
 import tkinter as tk
 from tkinter import ttk, scrolledtext, messagebox
