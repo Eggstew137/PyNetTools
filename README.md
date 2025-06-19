@@ -20,8 +20,11 @@ PLEASE NOTE: You NEED apt, python3, python-tk, and python-pip to run this!
 ---
 
 ## 🖥️ Screenshots
+### Installer/Update screen
+![Install/Update screen](sreenshots/pho1.png)
 
-*Coming soon!*
+### Main Menu
+![Main Menu](screenshots/pho2.png)
 
 ---
 
