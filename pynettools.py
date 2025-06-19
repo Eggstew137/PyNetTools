@@ -1,17 +1,12 @@
-import os
-import sys
-import shutil
-from pathlib import Path
-
 def self_install():
-    target_local = Path.home() / ".local/bin/pinet-toolbox"
+    target_local = Path("/bin/pynettools")
     current_path = Path(__file__).resolve()
 
     # Already installed?
-    if current_path == target_local or str(current_path).startswith("/usr/local/bin"):
+    if current_path == target_local or str(current_path).startswith("/bin"):
         return  # Already installed, skip
 
-    print("📦 PiNet Toolbox not found in ~/.local/bin — installing...")
+    print("📦 PyNetTools not found in /bin — installing...")
 
     # Ensure target directory exists
     os.makedirs(target_local.parent, exist_ok=True)
@@ -32,10 +27,11 @@ def self_install():
 
     print(f"✅ Installed to: {target_local}")
     print("🔁 Please re-run using:\n")
-    print(f"    {'sudo ' if os.geteuid() != 0 else ''}pinet-toolbox\n")
-    print("🧠 Tip: If 'pinet-toolbox' isn't found, add ~/.local/bin to your PATH.\n")
+    print(f"    {'sudo ' if os.geteuid() != 0 else ''}pynettools\n")
+    print("🧠 Tip: If 'pynettools' isn't found, ensure /bin is in your PATH.\n")
 
     sys.exit(0)
+
 
 self_install()  # Call before the rest of your app loads
 
